@@ -3,6 +3,7 @@ package com.arana.ds.reading0701;
 // Singly linked list
 public class SLinkedList {
 	protected Node head;	// head node of the list
+	protected Node tail;    // head node of the list
 	protected static long size;	// number of nodes in the list
 	
 	/**
@@ -25,4 +26,20 @@ public class SLinkedList {
 		// Increment the node count
 		size++;
 	}
+	
+	/**
+	 * Insert a new node a the end of a singly linked list
+	 * @param v
+	 */
+	public void addLast(Node v){
+		// Make a new node v point to null object
+		v.setNext(null);
+		// Make old tail node point to new node
+		this.tail.setNext(v);
+		// Make variable tail point to new node
+		this.tail = v;
+		size++;
+	}
+	
+	
 }
