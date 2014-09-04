@@ -41,5 +41,21 @@ public class SLinkedList {
 		size++;
 	}
 	
+	/**
+	 * Remove the node at the beginning of a Singly Linked List
+	 */
+	public void removeFirst(){
+		Node temp = null;
+		if(this.head == null){
+			System.out.println("The list is empty");			
+		}
+		temp = this.head;
+		// Make head point to next node (or null)
+		this.head = this.head.getNext();
+		// null out the next pointer of the removed node
+		temp.setNext(null);
+		// Decrement the node count
+		size--;
+	}
 	
 }
